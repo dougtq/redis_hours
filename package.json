@@ -1,0 +1,56 @@
+{
+  "name": "redis_hours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:live": " npm run test -- --watch",
+    "clean": "./node_modules/.bin/rimraf ./dist",
+    "build": "npm run clean && babel src/ -d dist/",
+    "build:start": "yarn build && clear && yarn start",
+    "start": "babel-node ./dist/loader.js",
+    "start:dev": "./node_modules/.bin/nodemon",
+    "lint": "node_modules/.bin/eslint src/**/*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "precommit": "npm run lint:fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougtq/redis_hours.git"
+  },
+  "keywords": [],
+  "author": "Douglas Alves <douglas.expalves@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dougtq/redis_hours/issues"
+  },
+  "homepage": "https://github.com/dougtq/redis_hours#readme",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-register": "6.26.0",
+    "chai": "4.1.2",
+    "eslint": "4.16.0",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "husky": "0.14.3",
+    "mocha": "5.0.0",
+    "nock": "9.1.6",
+    "nodemon": "1.14.11",
+    "nyc": "11.4.1",
+    "rimraf": "2.6.2",
+    "sinon": "4.1.6",
+    "sinon-chai": "2.14.0"
+  },
+  "dependencies": {
+    "axios": "0.17.1",
+    "body-parser": "1.18.2",
+    "express": "4.16.2",
+    "helmet": "3.9.0",
+    "redis": "2.8.0",
+    "response-time": "2.3.2"
+  }
+}

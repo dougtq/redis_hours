@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "js",
+  "ignore": ["tests/**/*.spec.js"],
+  "exec": "babel-node ./src/loader.js"
+}
