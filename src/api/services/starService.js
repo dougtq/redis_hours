@@ -33,7 +33,7 @@ function getTotalStars(username) {
     
           return resolve({ totalStars: totalStars, source: 'GitHub API', code: 200 })
         }).catch((response) => {
-            return reject({ message: 'The GitHub username could not be found. Try "coligo-io" as an example!', code: response.status })
+            return reject({ message: 'The GitHub username start could not be tracked. Try "dougtq" as an example!', code: response.status })
         })
       })
   })
