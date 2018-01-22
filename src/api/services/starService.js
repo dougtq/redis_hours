@@ -31,9 +31,9 @@ function getTotalStars(username) {
 
           setFromUsername(username, totalStars)
     
-          return resolve({ totalStars: totalStars, source: 'GitHub API', code: 200 })
+          return resolve({ totalStars: totalStars, source: 'GitHub API' })
         }).catch((response) => {
-            return reject({ message: 'The GitHub username start could not be tracked. Try "dougtq" as an example!', code: response.status })
+            return reject({ message: 'The GitHub username start could not be tracked. Try "dougtq" as an example!' })
         })
       })
   })
