@@ -1,19 +1,21 @@
-import Express from 'express'
+import express from 'express'
 import { json, urlencoded } from 'body-parser'
-import Helmet from 'helmet'
+import helmet from 'helmet'
 import responseTime from 'response-time'
+import compression from 'compression'
 
-import Cors from './../config/cors'
-import Stars from './../api/controllers/starController'
+import cors from './../config/cors'
+import stars from './../api/controllers/starController'
 
-const Server = Express()
+const Server = express()
 
-Server.use(Helmet())
+Server.use(helmet())
 Server.use(json())
 Server.use(urlencoded({ extended: true }))
+Server.use(compression())
 Server.use(responseTime())
-Server.use(Cors)
-Server.use('/api', Stars)
+Server.use(cors)
+Server.use('/api', stars)
 
 Server.set('port', process.env.PORT || 3000)
 
