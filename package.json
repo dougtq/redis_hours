@@ -9,7 +9,7 @@
     "build": "npm run clean && babel src/ -d dist/",
     "build:start": "yarn build && clear && yarn start",
     "start": "babel-node ./dist/loader.js",
-    "start:dev": "./node_modules/.bin/nodemon",
+    "dev": "./node_modules/.bin/nodemon",
     "lint": "node_modules/.bin/eslint src/**/*.js",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "npm run lint:fix"
@@ -48,6 +48,7 @@
   "dependencies": {
     "axios": "0.17.1",
     "body-parser": "1.18.2",
+    "compression": "1.7.1",
     "express": "4.16.2",
     "helmet": "3.9.0",
     "redis": "2.8.0",
