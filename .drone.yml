@@ -1,0 +1,7 @@
+pipeline:
+  build:
+    image: node:8
+    command:
+      - npm install --production
+      - npm run build
+      - npm run test
